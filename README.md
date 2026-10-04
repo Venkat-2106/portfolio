@@ -2,34 +2,33 @@
 
 A modern, fast, fully responsive personal portfolio website for Venkat - Data Analyst & Automation Developer who also builds full-stack SaaS products.
 
-Built with React + Vite + Tailwind CSS + React Router.
+Built with React 19 + Vite 8 + Tailwind CSS 4. Static site, no backend. Deployable on Vercel free tier.
 
 ## Tech Stack
 
 - React 19
 - Vite 8
 - Tailwind CSS 4
-- React Router DOM
 - Web3Forms (contact form)
 
 ## Development
 
-\\\ash
+```bash
 npm install
 npm run dev
-\\\
+```
 
 ## Build
 
-\\\ash
+```bash
 npm run build
-\\\
+```
 
 ## Preview
 
-\\\ash
+```bash
 npm run preview
-\\\
+```
 
 ## Deployment on Vercel
 
@@ -41,14 +40,21 @@ npm run preview
 ## Contact Form Setup
 
 1. Get a free access key from [Web3Forms](https://web3forms.com/)
-2. Replace \[EMAIL]\ in \src/pages/Contact.jsx\ with your access key
+2. Replace `[EMAIL]` in `src/pages/Contact.jsx` with your access key
 3. (Alternatively use Formspree by updating the form endpoint)
 
-## Placeholders to Fill
+## Verified Facts (do not modify)
 
-- Profile photo (add to src/assets)
-- Project screenshots (update in src/data/projects.js)
-- SmartBillr live URL and GitHub URL (in src/data/projects.js)
-- Resume PDF (add to public and link with 'Download R�sum�' button)
-- Email/Web3Forms access key in Contact.jsx
+- Data Analyst, Datazoic Machines Pvt. Ltd., May 2025 – Present: built DataIQ (Python/Tkinter desktop app, menu-driven validation and cleanup of large Excel datasets, live log panel, thread-safe execution); automated validation pipelines (comparison, mismatch detection, duplicate cleanup, standardisation); Python/SQL/Excel transformation.
+- Associate Partner, Samsung Electronics, Chennai, Aug 2023 – May 2025: VBA automation cut manual workload by 75%; SQL analysis integrated into Apache Superset improved decision-making efficiency by 15%; maintained the Master Pricing File (12 weeks, 15+ sheets, 5,500+ SKUs) for Home Appliances and Home Electronics; weekly B2B tier pricing; designed and QA-tested promotions for Samsung.com; received an appreciation mail for automation work.
+- Projects: DataIQ; Power BI dashboards (Northwind, Meal Delivery, Sales & Budget Analysis, Australia Student Graduation, IPL performance; Power BI, Power Query, DAX); VBA reporting automation (Excel to PowerPoint to Outlook, up to 75% less manual effort); Python + Windows Task Scheduler workflow automation; SmartBillr (multi-tenant billing/inventory SaaS: React, FastAPI, PostgreSQL/Supabase).
+- Early: April 2020 started a computer center while in college, later recognised as an FSSAI Mitra Center (one line only).
+- Links: LinkedIn https://www.linkedin.com/in/venkatesh-kumar-5a2a2631a/, GitHub https://github.com/Venkat-2106
 
+## Placeholders (to be filled manually)
+
+- Profile photo: `src/assets/Passport_photo.png` (already present, 2.3MB) - update if needed
+- Project screenshots: update `src/data/projects.js` with real screenshots
+- SmartBillr live URL and GitHub URL: replace `[LIVE_URL]` / `[GITHUB_URL]` in `src/data/projects.js`
+- Resume PDF: add to `public/` and add "Download Résumé" button on Home/About pages
+- Web3Forms access key: replace `[EMAIL]` in `src/pages/Contact.jsx`
