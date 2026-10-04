@@ -1,10 +1,14 @@
+import React from 'react';
+
+const year = new Date().getFullYear();
+
 const Footer = () => {
   return (
     <footer className='border-t border-gray-200 dark:border-gray-800 py-8 mt-16'>
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='flex flex-col md:flex-row justify-between items-center gap-4'>
           <p className='text-gray-600 dark:text-gray-400 text-sm'>
-            © {new Date().getFullYear()} Venkat. All rights reserved.
+            © {year} Venkat. All rights reserved.
           </p>
           <div className='flex gap-6'>
             <a href='https://www.linkedin.com/in/venkatesh-kumar-5a2a2631a/' target='_blank' rel='noopener noreferrer' className='text-gray-600 dark:text-gray-400 hover:text-[var(--accent)] transition-colors'>

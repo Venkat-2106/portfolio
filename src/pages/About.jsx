@@ -8,9 +8,12 @@ const About = () => {
           </p>
         </div>
 
-        <p className='text-sm text-gray-500 dark:text-gray-400 mb-6'>
-          April 2020: Started a computer centre recognised as an FSSAI Mitra Centre. August 2023: Moved to Chennai, joined Samsung Electronics. May 2025: Joined Datazoic Machines. Present: Building SmartBillr and exploring AI/ML.
-        </p>
+        <div className='mb-12'>
+          <h2 className='text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-6'>About</h2>
+          <p className='text-sm text-gray-500 dark:text-gray-400 mb-6'>
+            April 2020: Started a computer centre recognised as an FSSAI Mitra Centre. August 2023: Moved to Chennai, joined Samsung Electronics. May 2025: Joined Datazoic Machines. Present: Building SmartBillr and exploring AI/ML.
+          </p>
+        </div>
 
         <div className='mb-12'>
           <h2 className='text-2xl md:text-3xl font-bold text-gray-900 dark:text-white mb-6'>Experience</h2>

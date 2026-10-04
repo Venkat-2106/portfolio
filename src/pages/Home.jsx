@@ -36,6 +36,11 @@ const Home = () => {
             <a href='#contact' className='inline-flex items-center justify-center px-6 py-3 rounded-lg border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors'>
               Contact Me
             </a>
+            {import.meta.env.VITE_RESUME_URL && (
+              <a href={import.meta.env.VITE_RESUME_URL} target='_blank' rel='noopener noreferrer' className='inline-flex items-center justify-center px-6 py-3 rounded-lg border border-gray-300 dark:border-gray-700 text-gray-900 dark:text-white font-medium hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors'>
+                Resume
+              </a>
+            )}
           </div>
         </div>
       </div>

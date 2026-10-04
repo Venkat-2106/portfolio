@@ -22,51 +22,12 @@ const Navbar = () => {
 
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
-  // Scroll-spy: track which section is visible and add active class to nav link
-  const [activeSection, setActiveSection] = useState('home');
-
-  useEffect(() => {
-    const handleScroll = () => {
-      const sections = [
-        { id: 'home', offset: -1 },
-        { id: 'about', offset: -1 },
-        { id: 'projects', offset: -1 },
-        { id: 'skills', offset: -1 },
-        { id: 'contact', offset: -1 },
-      ];
-
-      const scrollPos = window.innerHeight / 2 + window.scrollY;
-
-      for (const section of sections) {
-        const element = document.getElementById(section.id);
-        if (!element) continue;
-        const top = element.offsetTop;
-        const bottom = top + element.offsetHeight;
-        if (top <= scrollPos && bottom > scrollPos) {
-          setActiveSection(section.id);
-          break;
-        }
-      }
-    };
-
-    window.addEventListener('scroll', handleScroll, { passive: true });
-    return () => window.removeEventListener('scroll', handleScroll);
-  }, []);
-
   const toggleDarkMode = () => {
     setIsDark(!isDark);
   };
 
   const toggleMenu = () => {
     setIsMenuOpen(!isMenuOpen);
-  };
-
-  // Map active section to link text color
-  const getLinkColor = (section) => {
-    if (section === activeSection) {
-      return 'text-[var(--accent)]';
-    }
-    return isDark ? 'text-gray-700 dark:text-gray-300' : 'text-gray-700';
   };
 
   return (
@@ -77,19 +38,19 @@ const Navbar = () => {
             Venkat
           </a>
           <div className='hidden md:flex items-center space-x-8'>
-            <a href='#home' className={`transition-colors ${getLinkColor('home')}`}>
+            <a href='#home' className='transition-colors text-accent'>
               Home
             </a>
-            <a href='#about' className={`transition-colors ${getLinkColor('about')}`}>
+            <a href='#about' className='transition-colors text-accent'>
               About
             </a>
-            <a href='#projects' className={`transition-colors ${getLinkColor('projects')}`}>
+            <a href='#projects' className='transition-colors text-accent'>
               Projects
             </a>
-            <a href='#skills' className={`transition-colors ${getLinkColor('skills')}`}>
+            <a href='#skills' className='transition-colors text-accent'>
               Skills
             </a>
-            <a href='#contact' className={`transition-colors ${getLinkColor('contact')}`}>
+            <a href='#contact' className='transition-colors text-accent'>
               Contact
             </a>
             <button onClick={toggleDarkMode} className='p-2 rounded-lg bg-gray-100 dark:bg-gray-800 hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors' aria-label='Toggle theme'>
@@ -147,35 +108,35 @@ const Navbar = () => {
             <div className='flex flex-col gap-4'>
               <a
                 href='#home'
-                className='font-bold text-lg text-gray-900 dark:text-white'
+                className='font-bold text-lg text-accent'
                 onClick={toggleMenu}
               >
                 Home
               </a>
               <a
                 href='#about'
-                className='text-gray-700 dark:text-gray-300 hover:text-[var(--accent)] transition-colors'
+                className='text-gray-700 dark:text-gray-300 hover:text-accent transition-colors'
                 onClick={toggleMenu}
               >
                 About
               </a>
               <a
                 href='#projects'
-                className='text-gray-700 dark:text-gray-300 hover:text-[var(--accent)] transition-colors'
+                className='text-gray-700 dark:text-gray-300 hover:text-accent transition-colors'
                 onClick={toggleMenu}
               >
                 Projects
               </a>
               <a
                 href='#skills'
-                className='text-gray-700 dark:text-gray-300 hover:text-[var(--accent)] transition-colors'
+                className='text-gray-700 dark:text-gray-300 hover:text-accent transition-colors'
                 onClick={toggleMenu}
               >
                 Skills
               </a>
               <a
                 href='#contact'
-                className='text-gray-700 dark:text-gray-300 hover:text-[var(--accent)] transition-colors'
+                className='text-gray-700 dark:text-gray-300 hover:text-accent transition-colors'
                 onClick={toggleMenu}
               >
                 Contact

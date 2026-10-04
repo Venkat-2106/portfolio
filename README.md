@@ -37,20 +37,17 @@ npm run preview
 3. Vercel will automatically detect Vite and configure the build settings
 4. Deploy! No additional configuration needed
 
-## Contact Form Setup
+## Environment Variables
 
-1. Get a free access key from [Web3Forms](https://web3forms.com/)
-2. Add `VITE_WEB3FORMS_KEY` to your environment variables (Vercel: Project Settings > Environment Variables)
-3. Optionally add `VITE_CONTACT_EMAIL` to display your email on the page
-4. Add `VITE_CONTACT_EMAIL` to show your email on the page (otherwise email is hidden from visitors)
+Add the following environment variables to Vercel (Project Settings > Environment Variables):
 
-## Placeholders (fill these in after deployment)
-
-- `VITE_WEB3FORMS_KEY` - Your Web3Forms access key environment variable
+- `VITE_WEB3FORMS_KEY` - Your Web3Forms access key
 - `VITE_CONTACT_EMAIL` - Your email address (shown on page if set)
-- Resume PDF: add `public/resume.pdf` and the "Download Résumé" button will appear automatically
-- Social preview image: `public/social-preview.png` (1200×630 PNG - SVG favicons do not work for platform previews)
-- Replace the default `https://venkat-portfolio.vercel.app` domain with your confirmed custom domain if needed
+- `VITE_RESUME_URL` - URL to your resume PDF (e.g. `/resume.pdf` or a full URL)
+
+## Contact Form
+
+The contact form uses Web3Forms. If `VITE_WEB3FORMS_KEY` is not set, the form will show an error state. If `VITE_CONTACT_EMAIL` is set, your email will be displayed on the page.
 
 ## Dark mode
 
@@ -58,16 +55,18 @@ npm run preview
 - Defaults to OS preference on first visit
 - No flash on first paint (theme set via inline script before render)
 
-## Verified Facts (for reference only - do not modify the promo)
+## Social Preview
 
-- Data Analyst, Datazoic Machines Pvt. Ltd., May 2025 – Present: built DataIQ (Python/Tkinter desktop app, menu-driven validation and cleanup of large Excel datasets, live log panel, thread-safe execution); automated validation pipelines (comparison, mismatch detection, duplicate cleanup, standardisation); Python/SQL/Excel transformation.
-- Associate Partner, Samsung Electronics, Chennai, Aug 2023 – May 2025: VBA automation cut manual workload by 75%; SQL analysis integrated into Apache Superset improved decision-making efficiency by 15%; maintained the Master Pricing File (12 weeks, 15+ sheets, 5,500+ SKUs) for Home Appliances and Home Electronics; weekly B2B tier pricing; designed and QA-tested promotions for Samsung.com; received an appreciation mail for automation work.
-- Projects: DataIQ; Power BI Dashboard Suite (Northwind, Meal Delivery, Sales & Budget Analysis, Australia Student Graduation, IPL performance; Power BI, Power Query, DAX); VBA reporting automation (Excel to PowerPoint to Outlook, up to 75% less manual effort); Python + Windows Task Scheduler workflow automation; SmartBillr (multi-tenant billing/inventory SaaS: React, FastAPI, PostgreSQL/Supabase).
-- Early: April 2020 started a computer centre while in college, later recognised as an FSSAI Mitra Center (one line only).
-- Links: LinkedIn https://www.linkedin.com/in/venkatesh-kumar-5a2a2631a/ , GitHub https://github.com/Venkat-2106
+Add `public/social-preview.png` (1200×630 PNG) for platform previews. SVG favicons do not work for platform previews.
 
-## Dark mode
+## Custom Domain
 
-- Toggle via localStorage preference (persists across visits)
-- Defaults to OS preference on first visit
-- No flash on first paint (theme set via inline script before render)
+Replace the default `https://venkat-portfolio.vercel.app` domain with your confirmed custom domain if needed.
+
+## Passport photo
+
+`Passport_photo.png` is 2.3 MB and unused. Either use it in the hero or About as an optimised WebP under 150 KB with width, height and alt text, or remove it.
+
+---
+
+*This portfolio is aimed at employers hiring Data Analysts / BI professionals. All content is based on verified facts only.*

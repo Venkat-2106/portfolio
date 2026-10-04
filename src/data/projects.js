@@ -11,8 +11,8 @@ export const projects = [
     screenshots: [
       { label: 'SmartBillr - Billing Dashboard', placeholder: 'https://placehold.co/800x500/e5e7eb/4b5563?text=SmartBillr+Dashboard' }
     ],
-    liveUrl: '[LIVE_URL]',
-    githubUrl: '[GITHUB_URL]'
+    liveUrl: null,
+    githubUrl: null
   },
   {
     id: 'dataiq',
@@ -21,13 +21,13 @@ export const projects = [
     overview: 'A menu-driven desktop application with a live log panel and thread-safe execution, designed for automated validation of large Excel datasets.',
     problem: 'Manual validation of large Excel datasets is time-consuming and error-prone, especially when dealing with multiple sources.',
     whatIBuilt: 'Built a multi-module desktop app with automated validation across data sources, Excel comparison, integrated cleanup tools, and thread-safe execution. Includes a menu-driven interface and live logging.',
-    tools: ['Python', 'Tkinter', 'pandas', 'openpyxl'],
+    tools: ['Python', 'Tkinter', 'Excel'],
     impact: 'Streamlines data validation workflows, enabling faster and more reliable data preparation for reporting.',
     screenshots: [
       { label: 'DataIQ - Main Interface', placeholder: 'https://placehold.co/800x500/e5e7eb/4b5563?text=DataIQ+Interface' }
     ],
     liveUrl: null,
-    githubUrl: '[GITHUB_URL]'
+    githubUrl: null
   },
   {
     id: 'powerbi-suite',
@@ -66,7 +66,7 @@ export const projects = [
     overview: 'Automated scheduled data processing, validation, report generation, and file management using Python and Windows Task Scheduler.',
     problem: 'Routine data processing tasks required manual intervention and were not consistently executed.',
     whatIBuilt: 'Created Python scripts for scheduled workflows with validation, cleaning, and automated reporting, deployed via Windows Task Scheduler.',
-    tools: ['Python', 'pandas', 'openpyxl', 'Windows Task Scheduler'],
+    tools: ['Python', 'Excel', 'Windows Task Scheduler'],
     impact: 'Ensures reliable, consistent execution of data workflows with minimal manual intervention.',
     screenshots: [
       { label: 'Python Workflow Automation', placeholder: 'https://placehold.co/800x500/e5e7eb/4b5563?text=Python+Automation' }
