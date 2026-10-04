@@ -2,30 +2,38 @@ import { useState } from 'react';
 
 const Contact = () => {
   const [formData, setFormData] = useState({ name: '', email: '', message: '' });
-  const [status, setStatus] = useState(null);
+  const [status, setStatus] = useState('idle');
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setStatus('submitting');
 
+    // Read access key from env var; fall back to placeholder for demo
+    const accessKey = import.meta.env.VITE_WEB3FORMS_KEY || '[EMAIL]';
+
     const formDataObj = {
-      access_key: '[EMAIL]',
+      access_key: accessKey,
       ...formData,
     };
 
-    const response = await fetch('https://api.web3forms.com/submit', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(formDataObj),
-    });
+    try {
+      const response = await fetch('https://api.web3forms.com/submit', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formDataObj),
+      });
 
-    const data = await response.json();
-    if (data.success) {
-      setStatus('success');
-      setFormData({ name: '', email: '', message: '' });
-    } else {
+      const data = await response.json();
+      if (data.success) {
+        setStatus('success');
+        setFormData({ name: '', email: '', message: '' });
+      } else {
+        setStatus('error');
+      }
+    } catch (_error) {
+      // Network error or other fetch failure
       setStatus('error');
     }
   };
@@ -38,14 +46,21 @@ const Contact = () => {
           <p className='text-lg text-gray-700 dark:text-gray-300 mb-6'>Get in touch.</p>
         </div>
 
+        {/* Email shown only if VITE_CONTACT_EMAIL is set; otherwise subtle hint */}
+        {import.meta.env.VITE_CONTACT_EMAIL && (
+          <div className='space-y-2 text-gray-700 dark:text-gray-300'>
+            <p>Email: {import.meta.env.VITE_CONTACT_EMAIL}</p>
+            <p>Location: Chennai, India</p>
+          </div>
+        )}
+
         <div className='space-y-2 text-gray-700 dark:text-gray-300'>
-          <p>Email: [EMAIL]</p>
           <p>Location: Chennai, India</p>
           <div className='flex gap-4 pt-2'>
-            <a href='https://www.linkedin.com/in/venkatesh-kumar-5a2a2631a/' target='_blank' rel='noopener noreferrer' className='text-[var(--accent)] hover:underline'>
+            <a href='https://www.linkedin.com/in/venkatesh-kumar-5a2a2631a/' target='_blank' rel='noopener noreferrer' className='text-gray-600 dark:text-gray-400 hover:text-[var(--accent)] transition-colors'>
               LinkedIn
             </a>
-            <a href='https://github.com/Venkat-2106' target='_blank' rel='noopener noreferrer' className='text-[var(--accent)] hover:underline'>
+            <a href='https://github.com/Venkat-2106' target='_blank' rel='noopener noreferrer' className='text-gray-600 dark:text-gray-400 hover:text-[var(--accent)] transition-colors'>
               GitHub
             </a>
           </div>
@@ -53,6 +68,13 @@ const Contact = () => {
 
         <div className='max-w-2xl'>
           <form onSubmit={handleSubmit} className='space-y-6'>
+            {/* Honeypot field - hidden from real users, catches bots */}
+            <input
+              type='text'
+              name='bot-field'
+              className='hidden'
+              autocomplete='off'
+            />
             <div>
               <label htmlFor='name' className='block text-sm font-medium text-gray-700 dark:text-gray-300 mb-2'>
                 Name
@@ -99,6 +121,7 @@ const Contact = () => {
               type='submit'
               disabled={status === 'submitting'}
               className='px-6 py-3 rounded-lg bg-[var(--accent)] text-white font-medium hover:opacity-90 transition-opacity disabled:opacity-50'
+              aria-disabled={status === 'submitting'}
             >
               {status === 'submitting' ? 'Sending...' : 'Send Message'}
             </button>
@@ -109,11 +132,6 @@ const Contact = () => {
               <p className='text-red-600 dark:text-red-400'>Failed to send message. Please try again.</p>
             )}
           </form>
-          <div className='mt-6 p-4 bg-amber-50 dark:bg-amber-900/20 border border-amber-200 dark:border-amber-800 rounded-lg'>
-            <p className='text-sm text-amber-700 dark:text-amber-400'>
-              Note: Replace [EMAIL] with your Web3Forms access key. Contact form shows clear success and error states.
-            </p>
-          </div>
         </div>
       </div>
     </section>

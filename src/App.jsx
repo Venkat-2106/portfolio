@@ -2,7 +2,6 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import About from './pages/About';
 import Projects from './pages/Projects';
-import Journey from './pages/Journey';
 import Contact from './pages/Contact';
 import Footer from './components/Footer';
 import './index.css';
@@ -15,7 +14,6 @@ function App() {
         <Home />
         <About />
         <Projects />
-        <Journey />
         <Contact />
       </main>
       <Footer />

@@ -16,7 +16,7 @@ export const projects = [
   },
   {
     id: 'dataiq',
-    title: 'DataIQ ï¿½ Enterprise Data Validation Tool',
+    title: 'DataIQ – Enterprise Data Validation Tool',
     tagline: 'Python + Tkinter desktop app for data validation and cleanup',
     overview: 'A menu-driven desktop application with a live log panel and thread-safe execution, designed for automated validation of large Excel datasets.',
     problem: 'Manual validation of large Excel datasets is time-consuming and error-prone, especially when dealing with multiple sources.',

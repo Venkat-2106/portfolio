@@ -4,7 +4,7 @@ const Footer = () => {
       <div className='max-w-7xl mx-auto px-4 sm:px-6 lg:px-8'>
         <div className='flex flex-col md:flex-row justify-between items-center gap-4'>
           <p className='text-gray-600 dark:text-gray-400 text-sm'>
-            ï¿½ {new Date().getFullYear()} Venkat. All rights reserved.
+            © {new Date().getFullYear()} Venkat. All rights reserved.
           </p>
           <div className='flex gap-6'>
             <a href='https://www.linkedin.com/in/venkatesh-kumar-5a2a2631a/' target='_blank' rel='noopener noreferrer' className='text-gray-600 dark:text-gray-400 hover:text-[var(--accent)] transition-colors'>

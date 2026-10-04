@@ -4,14 +4,42 @@
   --font-sans: 'Inter', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
 }
 
+@custom-variant dark (&:where(.dark, .dark *));
+
 html {
   font-family: var(--font-sans);
 }
 
-:root {
-  --accent: #aa3bff;
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
-* {
-  scroll-behavior: smooth;
+:root {
+  scroll-padding-top: 72px;
+  --accent: #6b46c1;
+}
+
+@media (max-width: 640px) {
+  :root {
+    scroll-padding-top: 56px;
+  }
+}
+
+[data-theme='dark'] {
+  --bg: #0a0a0d;
+  --text: #f0f0f0;
+}
+
+[data-theme='light'] {
+  --bg: #fff;
+  --text: #111111;
+}
+
+/* Focus visible styles */
+a:focus-visible,
+button:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
 }
